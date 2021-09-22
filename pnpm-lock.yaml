@@ -12,7 +12,15 @@ importers:
       '@babel/preset-typescript': ^7.15.0
       '@commitlint/cli': ^13.1.0
       '@commitlint/config-conventional': ^13.1.0
+      '@element-plus/components': workspace:*
+      '@element-plus/directives': workspace:*
+      '@element-plus/hooks': workspace:*
       '@element-plus/icons': ^0.0.11
+      '@element-plus/locale': workspace:*
+      '@element-plus/test-utils': workspace:*
+      '@element-plus/theme-chalk': workspace:*
+      '@element-plus/tokens': workspace:*
+      '@element-plus/utils': workspace:*
       '@pnpm/find-workspace-packages': ^3.1.13
       '@pnpm/logger': ^4.0.0
       '@popperjs/core': ^2.10.1
@@ -83,7 +91,15 @@ importers:
       vue-router: ^4.0.2
       vue-tsc: ^0.3.0
     dependencies:
+      '@element-plus/components': link:packages/components
+      '@element-plus/directives': link:packages/directives
+      '@element-plus/hooks': link:packages/hooks
       '@element-plus/icons': 0.0.11
+      '@element-plus/locale': link:packages/locale
+      '@element-plus/test-utils': link:packages/test-utils
+      '@element-plus/theme-chalk': link:packages/theme-chalk
+      '@element-plus/tokens': link:packages/tokens
+      '@element-plus/utils': link:packages/utils
       '@popperjs/core': 2.10.1
       '@vueuse/core': 6.1.0_vue@3.2.6
       async-validator: 3.4.0
@@ -182,13 +198,7 @@ importers:
 
   packages/components:
     specifiers:
-      '@element-plus/components': .
-      '@element-plus/directives': workspace:*
-      '@element-plus/hooks': workspace:*
       '@element-plus/icons': ^0.0.11
-      '@element-plus/theme-chalk': workspace:*
-      '@element-plus/tokens': workspace:*
-      '@element-plus/utils': workspace:*
       '@popperjs/core': ^2.10.1
       '@vueuse/core': ~6.1.0
       async-validator: ^3.4.0
@@ -196,13 +206,7 @@ importers:
       lodash: ^4.17.21
       memoize-one: ^5.2.1
     dependencies:
-      '@element-plus/components': 'link:'
-      '@element-plus/directives': link:../directives
-      '@element-plus/hooks': link:../hooks
       '@element-plus/icons': 0.0.11
-      '@element-plus/theme-chalk': link:../theme-chalk
-      '@element-plus/tokens': link:../tokens
-      '@element-plus/utils': link:../utils
       '@popperjs/core': 2.10.1
       '@vueuse/core': 6.1.0_vue@3.2.6
       async-validator: 3.4.0
@@ -212,8 +216,6 @@ importers:
 
   packages/directives:
     specifiers:
-      '@element-plus/test-utils': ^0.0.5
-      '@element-plus/utils': ^0.0.5
       '@vue/test-utils': ^2.0.0-beta.3
       chalk: ^4.1.2
       gulp: ^4.0.2
@@ -223,10 +225,8 @@ importers:
       ts-node: ^10.1.0
       typescript: ^4.4.3
     dependencies:
-      '@element-plus/utils': link:../utils
       normalize-wheel: 1.0.1
     devDependencies:
-      '@element-plus/test-utils': link:../test-utils
       '@vue/test-utils': 2.0.0-rc.14_vue@3.2.6
       chalk: 4.1.2
       gulp: 4.0.2
@@ -237,8 +237,6 @@ importers:
 
   packages/element-plus:
     specifiers:
-      '@element-plus/icons': ^0.0.11
-      '@element-plus/test-utils': ^0.0.5
       '@popperjs/core': ^2.10.1
       '@vueuse/core': ~6.1.0
       async-validator: ^3.4.0
@@ -247,7 +245,6 @@ importers:
       normalize-wheel: ^1.0.1
       resize-observer-polyfill: ^1.5.1
     dependencies:
-      '@element-plus/icons': 0.0.11
       '@popperjs/core': 2.10.1
       '@vueuse/core': 6.1.0_vue@3.2.6
       async-validator: 3.4.0
@@ -255,16 +252,9 @@ importers:
       lodash: 4.17.21
       normalize-wheel: 1.0.1
       resize-observer-polyfill: 1.5.1
-    devDependencies:
-      '@element-plus/test-utils': link:../test-utils
 
   packages/hooks:
     specifiers:
-      '@element-plus/directives': workspace:*
-      '@element-plus/locale': workspace:*
-      '@element-plus/test-utils': ^0.0.5
-      '@element-plus/tokens': workspace:*
-      '@element-plus/utils': workspace:*
       '@popperjs/core': ^2.10.1
       '@vue/test-utils': ^2.0.0-beta.3
       '@vueuse/core': ~6.1.0
@@ -275,14 +265,9 @@ importers:
       ts-node: ^10.1.0
       typescript: ^4.4.3
     dependencies:
-      '@element-plus/directives': link:../directives
-      '@element-plus/locale': link:../locale
-      '@element-plus/tokens': link:../tokens
-      '@element-plus/utils': link:../utils
       '@popperjs/core': 2.10.1
       '@vueuse/core': 6.1.0_vue@3.2.6
     devDependencies:
-      '@element-plus/test-utils': link:../test-utils
       '@vue/test-utils': 2.0.0-rc.14_vue@3.2.6
       chalk: 4.1.2
       gulp: 4.0.2
@@ -293,7 +278,6 @@ importers:
 
   packages/locale:
     specifiers:
-      '@element-plus/test-utils': ^0.0.5
       '@types/gulp': ^4.0.9
       '@vue/test-utils': ^2.0.0-beta.3
       chalk: ^4.1.2
@@ -306,7 +290,6 @@ importers:
     dependencies:
       dayjs: 1.10.6
     devDependencies:
-      '@element-plus/test-utils': link:../test-utils
       '@types/gulp': 4.0.9
       '@vue/test-utils': 2.0.0-rc.14_vue@3.2.6
       chalk: 4.1.2
@@ -413,12 +396,7 @@ importers:
       typescript: 4.4.3
 
   play:
-    specifiers:
-      '@element-plus/components': workspace:*
-      '@element-plus/theme-chalk': workspace:*
-    dependencies:
-      '@element-plus/components': link:../packages/components
-      '@element-plus/theme-chalk': link:../packages/theme-chalk
+    specifiers: {}
 
 packages:
 
